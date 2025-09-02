@@ -174,3 +174,41 @@
         overflow: visible !important;
     }
 }
+
+/* 响应式图片网格样式 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* 手机端图片上下排列 */
+@media (max-width: 640px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .image-grid img {
+        height: 200px;
+    }
+}
+
+/* 平板端保持2列但调整间距 */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .image-grid {
+        gap: 0.75rem;
+    }
+    
+    .image-grid img {
+        height: 240px;
+    }
+}
+
+/* 桌面端 */
+@media (min-width: 1025px) {
+    .image-grid img {
+        height: 288px;
+    }
+}
